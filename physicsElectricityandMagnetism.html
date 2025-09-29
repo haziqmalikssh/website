@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricity & Magnetism Guide</title>
+    
+    <!-- MathJax for LaTeX rendering -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+        }
+        header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5em;
+        }
+        nav {
+            background: #f8f9fa;
+            padding: 15px 40px;
+            border-bottom: 2px solid #e9ecef;
+        }
+        nav a {
+            color: #4facfe;
+            text-decoration: none;
+            margin-right: 25px;
+            font-weight: 600;
+        }
+        nav a:hover {
+            color: #00f2fe;
+        }
+        .content {
+            padding: 40px;
+        }
+        h2 {
+            color: #4facfe;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e9ecef;
+        }
+        h3 {
+            color: #00f2fe;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .equation-box {
+            background: #f8f9fa;
+            border-left: 4px solid #4facfe;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .law-box {
+            background: #e7f3ff;
+            border: 2px solid #4facfe;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .law-box h3 {
+            margin-top: 0;
+        }
+        .note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .important {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .tip {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #e9ecef;
+        }
+        .nav-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+        .nav-btn:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background: #4facfe;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        .formula-list {
+            background: #f0f9ff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border: 1px solid #4facfe;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚡ Electricity & Magnetism</h1>
+            <p>Fundamental Physics of E&M</p>
+        </header>
+        
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="c-programming.html">C Programming</a>
+            <a href="java-programming.html">Java Programming</a>
+            <a href="electricity-magnetism.html">Electricity & Magnetism</a>
+        </nav>
+        
+        <div class="content">
+            <h1>Introduction to Electricity and Magnetism</h1>
+            <p>Electricity and magnetism are two fundamental aspects of electromagnetism, one of the four fundamental forces of nature. This guide covers the essential concepts, laws, and equations you need to understand E&M physics.</p>
+            
+            <h2>1. Electric Charge and Coulomb's Law</h2>
+            
+            <h3>Electric Charge</h3>
+            <p>Electric charge is a fundamental property of matter. There are two types: positive (+) and negative (-). Like charges repel, opposite charges attract. Charge is quantized in units of the elementary charge:</p>
+            
+            <div class="equation-box">
+                \[e = 1.602 \times 10^{-19} \text{ C}\]
+                <p><strong>where:</strong> \(e\) = elementary charge (charge of a proton or electron)</p>
+            </div>
+            
+            <div class="law-box">
+                <h3>Coulomb's Law</h3>
+                <p>The force between two point charges is directly proportional to the product of their charges and inversely proportional to the square of the distance between them.</p>
+                
+                <div class="equation-box">
+                    \[\vec{F} = k_e \frac{q_1 q_2}{r^2} \hat{r}\]
+                    \[k_e = \frac{1}{4\pi\epsilon_0} = 8.99 \times 10^9 \text{ N·m}^2/\text{C}^2\]
+                </div>
+                
+                <p><strong>where:</strong></p>
+                <ul>
+                    <li>\(F\) = electrostatic force (N)</li>
+                    <li>\(q_1, q_2\) = charges (C)</li>
+                    <li>\(r\) = distance between charges (m)</li>
+                    <li>\(k_e\) = Coulomb's constant</li>
+                    <li>\(\epsilon_0 = 8.85 \times 10^{-12}\) C²/(N·m²) = permittivity of free space</li>
+                </ul>
+            </div>
+            
+            <div class="tip">
+                <strong>Tip:</strong> If the force is positive, charges repel. If negative, they attract.
+            </div>
+            
+            <h2>2. Electric Field</h2>
+            <p>The electric field is a vector field that describes the force per unit charge at any point in space.</p>
+            
+            <h3>Electric Field Definition</h3>
+            <div class="equation-box">
+                \[\vec{E} = \frac{\vec{F}}{q}\]
+            </div>
+            
+            <h3>Electric Field from a Point Charge</h3>
+            <div class="equation-box">
+                \[\vec{E} = k_e \frac{q}{r^2} \hat{r}\]
+                <p><strong>where:</strong> \(E\) = electric field strength (N/C or V/m)</p>
+            </div>
+            
+            <h3>Electric Field from Multiple Charges (Superposition)</h3>
+            <div class="equation-box">
+                \[\vec{E}_{total} = \sum_{i=1}^{n} \vec{E}_i = k_e \sum_{i=1}^{n} \frac{q_i}{r_i^2} \hat{r}_i\]
+            </div>
+            
+            <h3>Electric Field Lines</h3>
+            <ul>
+                <li>Field lines point in the direction a positive test charge would move</li>
+                <li>Field lines originate on positive charges and terminate on negative charges</li>
+                <li>Density of lines indicates field strength</li>
+                <li>Field lines never cross</li>
+            </ul>
+            
+            <h2>3. Gauss's Law</h2>
+            <p>Gauss's Law relates the electric flux through a closed surface to the charge enclosed by that surface.</p>
+            
+            <div class="law-box">
+                <h3>Gauss's Law (Integral Form)</h3>
+                <div class="equation-box">
+                    \[\oint \vec{E} \cdot d\vec{A} = \frac{Q_{enclosed}}{\epsilon_0}\]
+                </div>
+                
+                <p><strong>where:</strong></p>
+                <ul>
+                    <li>\(\oint\) = closed surface integral</li>
+                    <li>\(\vec{E}\) = electric field</li>
+                    <li>\(d\vec{A}\) = differential area element (points outward)</li>
+                    <li>\(Q_{enclosed}\) = total charge inside the surface</li>
+                </ul>
+            </div>
+            
+            <h3>Applications of Gauss's Law</h3>
+            
+            <p><strong>Electric Field of an Infinite Line Charge:</strong></p>
+            <div class="equation-box">
+                \[E = \frac{\lambda}{2\pi\epsilon_0 r}\]
+                <p>where \(\lambda\) = linear charge density (C/m)</p>
+            </div>
+            
+            <p><strong>Electric Field of an Infinite Sheet:</strong></p>
+            <div class="equation-box">
+                \[E = \frac{\sigma}{2\epsilon_0}\]
+                <p>where \(\sigma\) = surface charge density (C/m²)</p>
+            </div>
+            
+            <h2>4. Electric Potential</h2>
+            <p>Electric potential is the electric potential energy per unit charge. It's a scalar quantity.</p>
+            
+            <h3>Electric Potential Difference</h3>
+            <div class="equation-box">
+                \[\Delta V = V_B - V_A = -\int_A^B \vec{E} \cdot d\vec{l}\]
+            </div>
+            
+            <h3>Electric Potential from a Point Charge</h3>
+            <div class="equation-box">
+                \[V = k_e \frac{q}{r}\]
+                <p><strong>where:</strong> \(V\) = electric potential (V = J/C)</p>
+            </div>
+            
+            <h3>Relationship Between Field and Potential</h3>
+            <div class="equation-box">
+                \[\vec{E} = -\nabla V = -\left(\frac{\partial V}{\partial x}\hat{i} + \frac{\partial V}{\partial y}\hat{j} + \frac{\partial V}{\partial z}\hat{k}\right)\]
+            </div>
+            
+            <div class="note">
+                <strong>Note:</strong> Electric field points in the direction of decreasing potential. The negative sign indicates this relationship.
+            </div>
+            
+            <h3>Electric Potential Energy</h3>
+            <div class="equation-box">
+                \[U = qV = k_e \frac{q_1 q_2}{r}\]
+            </div>
+            
+            <h2>5. Capacitance and Capacitors</h2>
+            <p>A capacitor is a device that stores electric charge and energy in an electric field.</p>
+            
+            <h3>Capacitance Definition</h3>
+            <div class="equation-box">
+                \[C = \frac{Q}{V}\]
+                <p><strong>where:</strong></p>
+                <ul>
+                    <li>\(C\) = capacitance (F = Farads)</li>
+                    <li>\(Q\) = charge stored (C)</li>
+                    <li>\(V\) = voltage across capacitor (V)</li>
+                </ul>
+            </div>
+            
+            <h3>Parallel Plate Capacitor</h3>
+            <div class="equation-box">
+                \[C = \epsilon_0 \frac{A}{d}\]
+                <p>where \(A\) = plate area (m²), \(d\) = separation distance (m)</p>
+            </div>
+            
+            <h3>Energy Stored in a Capacitor</h3>
+            <div class="equation-box">
+                \[U = \frac{1}{2}CV^2 = \frac{1}{2}QV = \frac{Q^2}{2C}\]
+            </div>
+            
+            <h3>Capacitors in Circuits</h3>
+            <p><strong>Series Combination:</strong></p>
+            <div class="equation-box">
+                \[\frac{1}{C_{eq}} = \frac{1}{C_1} + \frac{1}{C_2} + \frac{1}{C_3} + ...\]
+            </div>
+            
+            <p><strong>Parallel Combination:</strong></p>
+            <div class="equation-box">
+                \[C_{eq} = C_1 + C_2 + C_3 + ...\]
+            </div>
+            
+            <h2>6. Electric Current and Resistance</h2>
+            
+            <h3>Electric Current</h3>
+            <div class="equation-box">
+                \[I = \frac{dQ}{dt}\]
+                <p><strong>where:</strong> \(I\) = current (A = Amperes = C/s)</p>
+            </div>
+            
+            <h3>Current Density</h3>
+            <div class="equation-box">
+                \[\vec{J} = \frac{I}{A} = nq\vec{v}_d\]
+                <p>where \(n\) = charge carrier density, \(\vec{v}_d\) = drift velocity</p>
+            </div>
+            
+            <div class="law-box">
+                <h3>Ohm's Law</h3>
+                <div class="equation-box">
+                    \[V = IR\]
+                </div>
+                <p><strong>where:</strong></p>
+                <ul>
+                    <li>\(V\) = voltage (V)</li>
+                    <li>\(I\) = current (A)</li>
+                    <li>\(R\) = resistance (Ω = Ohms)</li>
+                </ul>
+            </div>
+            
+            <h3>Resistance and Resistivity</h3>
+            <div class="equation-box">
+                \[R = \rho \frac{L}{A}\]
+                <p>where \(\rho\) = resistivity (Ω·m), \(L\) = length, \(A\) = cross-sectional area</p>
+            </div>
+            
+            <h3>Power Dissipation</h3>
+            <div class="equation-box">
+                \[P = IV = I^2R = \frac{V^2}{R}\]
+                <p><strong>where:</strong> \(P\) = power (W = Watts = J/s)</p>
+            </div>
+            
+            <h3>Resistors in Circuits</h3>
+            <p><strong>Series Combination:</strong></p>
+            <div class="equation-box">
+                \[R_{eq} = R_1 + R_2 + R_3 + ...\]
+            </div>
+            
+            <p><strong>Parallel Combination:</strong></p>
+            <div class="equation-box">
+                \[\frac{1}{R_{eq}} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3} + ...\]
+            </div>
+            
+            <h2>7. Kirchhoff's Circuit Laws</h2>
+            
+            <div class="law-box">
+                <h3>Kirchhoff's Current Law (KCL)</h3>
+                <p>The sum of currents entering a junction equals the sum of currents leaving.</p>
+                <div class="equation-box">
+                    \[\sum I_{in} = \sum I_{out}\]
+                </div>
+            </div>
+            
+            <div class="law-box">
+                <h3>Kirchhoff's Voltage Law (KVL)</h3>
+                <p>The sum of voltage changes around any closed loop is zero.</p>
+                <div class="equation-box">
+                    \[\sum V = 0\]
+                </div>
+            </div>
+            
+            <h2>8. RC Circuits</h2>
+            
+            <h3>Charging Capacitor</h3>
+            <div class="equation-box">
+                \[Q(t) = Q_{max}(1 - e^{-t/RC})\]
+                \[V_C(t) = V_{max}(1 - e^{-t/RC})\]
+                \[I(t) = I_0 e^{-t/RC}\]
+            </div>
+            
+            <h3>Discharging Capacitor</h3>
+            <div class="equation-box">
+                \[Q(t) = Q_0 e^{-t/RC}\]
+                \[V_C(t) = V_0 e^{-t/RC}\]
+                \[I(t) = -I_0 e^{-t/RC}\]
+            </div>
+            
+            <h3>Time Constant</h3>
+            <div class="equation-box">
+                \[\tau = RC\]
+                <p>After time \(\tau\), the capacitor charges to 63% of maximum or discharges to 37% of initial value.</p>
+            </div>
+            
+            <h2>9. Magnetic Fields</h2>
+            <p>Moving charges create magnetic fields, and magnetic fields exert forces on moving charges.</p>
+            
+            <h3>Magnetic Force on a Moving Charge</h3>
+            <div class="equation-box">
+                \[\vec{F} = q\vec{v} \times \vec{B}\]
+                \[F = qvB\sin\theta\]
+            </div>
+            
+            <p><strong>where:</strong></p>
+            <ul>
+                <li>\(\vec{B}\) = magnetic field (T = Tesla)</li>
+                <li>\(\vec{v}\) = velocity of charge</li>
+                <li>\(\theta\) = angle between \(\vec{v}\) and \(\vec{B}\)</li>
+            </ul>
+            
+            <div class="tip">
+                <strong>Tip:</strong> Use the right-hand rule: fingers point in direction of \(\vec{v}\), curl toward \(\vec{B}\), thumb points in direction of \(\vec{F}\) for positive charges.
+            </div>
+            
+            <h3>Magnetic Force on a Current-Carrying Wire</h3>
+            <div class="equation-box">
+                \[\vec{F} = I\vec{L} \times \vec{B}\]
+                \[F = ILB\sin\theta\]
+            </div>
+            
+            <h3>Circular Motion in Magnetic Field</h3>
+            <p>A charged particle entering perpendicular to a uniform magnetic field follows a circular path:</p>
+            <div class="equation-box">
+                \[r = \frac{mv}{qB}\]
+                \[T = \frac{2\pi m}{qB}\]
+                \[f = \frac{qB}{2\pi m}\]
+            </div>
+            
+            <h2>10. Sources of Magnetic Field</h2>
+            
+            <div class="law-box">
+                <h3>Biot-Savart Law</h3>
+                <p>Gives the magnetic field produced by a current element:</p>
+                <div class="equation-box">
+                    \[d\vec{B} = \frac{\mu_0}{4\pi} \frac{I d\vec{l} \times \hat{r}}{r^2}\]
+                </div>
+                <p>where \(\mu_0 = 4\pi \times 10^{-7}\) T·m/A = permeability of free space</p>
+            </div>
+            
+            <h3>Magnetic Field of a Long Straight Wire</h3>
+            <div class="equation-box">
+                \[B = \frac{\mu_0 I}{2\pi r}\]
+            </div>
+            
+            <h3>Magnetic Field at Center of Circular Loop</h3>
+            <div class="equation-box">
+                \[B = \frac{\mu_0 I}{2R}\]
+                <p>where \(R\) = radius of loop</p>
+            </div>
+            
+            <h3>Magnetic Field Inside a Solenoid</h3>
+            <div class="equation-box">
+                \[B = \mu_0 nI\]
+                <p>where \(n = N/L\) = number of turns per unit length</p>
+            </div>
+            
+            <div class="law-box">
+                <h3>Ampère's Law</h3>
+                <div class="equation-box">
+                    \[\oint \vec{B} \cdot d\vec{l} = \mu_0 I_{enclosed}\]
+                </div>
+            </div>
+            
+            <h2>11. Electromagnetic Induction</h2>
+            
+            <h3>Magnetic Flux</h3>
+            <div class="equation-box">
+                \[\Phi_B = \int \vec{B} \cdot d\vec{A} = BA\cos\theta\]
+                <p><strong>where:</strong> \(\Phi_B\) = magnetic flux (Wb = Weber = T·m²)</p>
+            </div>
+            
+            <div class="law-box">
+                <h3>Faraday's Law of Induction</h3>
+                <p>A changing magnetic flux induces an EMF:</p>
+                <div class="equation-box">
+                    \[\mathcal{E} = -\frac{d\Phi_B}{dt}\]
+                </div>
+                <p>For \(N\) turns of a coil:</p>
+                <div class="equation-box">
+                    \[\mathcal{E} = -N\frac{d\Phi_B}{dt}\]
+                </div>
+            </div>
+            
+            <div class="law-box">
+                <h3>Lenz's Law</h3>
+                <p>The induced current flows in a direction to oppose the change in magnetic flux that produced it (hence the negative sign in Faraday's law).</p>
+            </div>
+            
+            <h3>Motional EMF</h3>
+            <p>For a conductor moving through a magnetic field:</p>
+            <div class="equation-box">
+                \[\mathcal{E} = BLv\]
+                <p>where \(L\) = length of conductor, \(v\) = velocity perpendicular to \(B\)</p>
+            </div>
+            
+            <h2>12. Inductance</h2>
+            
+            <h3>Self-Inductance</h3>
+            <div class="equation-box">
+                \[L = \frac{N\Phi_B}{I}\]
+                \[\mathcal{E} = -L\frac{dI}{dt}\]
+                <p><strong>where:</strong> \(L\) = inductance (H = Henry)</p>
+            </div>
+            
+            <h3>Inductance of a Solenoid</h3>
+            <div class="equation-box">
+                \[L = \mu_0 n^2 A l\]
+                <p>where \(n\) = turns per unit length, \(A\) = cross-sectional area, \(l\) = length</p>
+            </div>
+            
+            <h3>Energy Stored in an Inductor</h3>
+            <div class="equation-box">
+                \[U_L = \frac{1}{2}LI^2\]
+            </div>
+            
+            <h3>RL Circuits</h3>
+            <p><strong>Current Growth:</strong></p>
+            <div class="equation-box">
+                \[I(t) = I_{max}(1 - e^{-t/\tau})\]
+            </div>
+            
+            <p><strong>Current Decay:</strong></p>
+            <div class="equation-box">
+                \[I(t) = I_0 e^{-t/\tau}\]
+            </div>
+            
+            <p><strong>Time Constant:</strong></p>
+            <div class="equation-box">
+                \[\tau = \frac{L}{R}\]
+            </div>
+            
+            <h2>13. Maxwell's Equations</h2>
+            <p>The four fundamental equations that describe all of electromagnetism:</p>
+            
+            <div class="formula-list">
+                <h3>Maxwell's Equations (Integral Form)</h3>
+                
+                <p><strong>1. Gauss's Law for Electricity:</strong></p>
+                <div class="equation-box">
+                    \[\oint \vec{E} \cdot d\vec{A} = \frac{Q_{enclosed}}{\epsilon_0}\]
+                </div>
+                
+                <p><strong>2. Gauss's Law for Magnetism:</strong></p>
+                <div class="equation-box">
+                    \[\oint \vec{B} \cdot d\vec{A} = 0\]
+                    <p>(No magnetic monopoles exist)</p>
+                </div>
+                
+                <p><strong>3. Faraday's Law:</strong></p>
+                <div class="equation-box">
+                    \[\oint \vec{E} \cdot d\vec{l} = -\frac{d\Phi_B}{dt}\]
+                </div>
+                
+                <p><strong>4. Ampère-Maxwell Law:</strong></p>
+                <div class="equation-box">
+                    \[\oint \vec{B} \cdot d\vec{l} = \mu_0 I + \mu_0\epsilon_0\frac{d\Phi_E}{dt}\]
+                </div>
+            </div>
+            
+            <h2>14. Electromagnetic Waves</h2>
+            <p>Changing electric and magnetic fields propagate through space as electromagnetic waves.</p>
+            
+            <h3>Speed of Light</h3>
+            <div class="equation-box">
+                \[c = \frac{1}{\sqrt{\mu_0\epsilon_0}} = 3.00 \times 10^8 \text{ m/s}\]
+            </div>
+            
+            <h3>Wave Properties</h3>
+            <div class="equation-box">
+                \[c = f\lambda\]
+                \[E = cB\]
+            </div>
+            
+            <h3>Energy and Intensity</h3>
+            <div class="equation-box">
+                \[I = \frac{P}{A} = \frac{E_0 B_0}{2\mu_0} = \frac{cB_0^2}{2\mu_0} = \frac{c\epsilon_0 E_0^2}{2}\]
+            </div>
+            
+            <h2>Important Constants Summary</h2>
+            <table>
+                <tr>
+                    <th>Constant</th>
+                    <th>Symbol</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>Elementary charge</td>
+                    <td>\(e\)</td>
+                    <td>\(1.602 \times 10^{-19}\) C</td>
+                </tr>
+                <tr>
+                    <td>Coulomb's constant</td>
+                    <td>\(k_e\)</td>
+                    <td>\(8.99 \times 10^9\) N·m²/C²</td>
+                </tr>
+                <tr>
+                    <td>Permittivity of free space</td>
+                    <td>\(\epsilon_0\)</td>
+                    <td>\(8.85 \times 10^{-12}\) C²/(N·m²)</td>
+                </tr>
+                <tr>
+                    <td>Permeability of free space</td>
+                    <td>\(\mu_0\)</td>
+                    <td>\(4\pi \times 10^{-7}\) T·m/A</td>
+                </tr>
+                <tr>
+                    <td>Speed of light</td>
+                    <td>\(c\)</td>
+                    <td>\(3.00 \times 10^8\) m/s</td>
+                </tr>
+            </table>
+            
+            <h2>Key Takeaways</h2>
+            <ul>
+                <li><strong>Electric forces</strong> arise from charges and follow Coulomb's Law</li>
+                <li><strong>Electric fields</strong> describe the force per unit charge in space</li>
+                <li><strong>Gauss's Law</strong> relates electric flux to enclosed charge</li>
+                <li><strong>Electric potential</strong> is energy per unit charge (scalar)</li>
+                <li><strong>Capacitors</strong> store charge and energy in electric fields</li>
+                <li><strong>Ohm's Law</strong> relates voltage, current, and resistance</li>
+                <li><strong>Magnetic fields</strong> arise from moving charges and currents</li>
+                <li><strong>Faraday's Law</strong> shows changing magnetic flux induces EMF</li>
+                <li><strong>Maxwell's Equations</strong> unify electricity and magnetism</li>
+                <li><strong>Electromagnetic waves</strong> travel at the speed of light</li>
+            </ul>
+            
+            <div class="important">
+                <strong>Important:</strong> Always use consistent units (SI system) and pay attention to vector directions when solving E&M problems!
+            </div>
+            
+            <div class="navigation">
+                <a href="java-programming.html" class="nav-btn">← Previous: Java Programming</a>
+                <a href="index.html" class="nav-btn">Back to Home →</a>
+            </div>
+        </div>
+        
+        <footer>
+            <p>&copy; 2025 Programming & Physics Tutor. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Programming Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+        }
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5em;
+        }
+        nav {
+            background: #f8f9fa;
+            padding: 15px 40px;
+            border-bottom: 2px solid #e9ecef;
+        }
+        nav a {
+            color: #667eea;
+            text-decoration: none;
+            margin-right: 25px;
+            font-weight: 600;
+        }
+        nav a:hover {
+            color: #764ba2;
+        }
+        .content {
+            padding: 40px;
+        }
+        h2 {
+            color: #667eea;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e9ecef;
+        }
+        h3 {
+            color: #764ba2;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        code {
+            background: #f8f9fa;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #e83e8c;
+        }
+        pre {
+            background: #2d3748;
+            color: #f7fafc;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        pre code {
+            background: none;
+            color: #f7fafc;
+            padding: 0;
+        }
+        .note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .important {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .tip {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #e9ecef;
+        }
+        .nav-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+        .nav-btn:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background: #667eea;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🖥️ C Programming Guide</h1>
+            <p>Master Procedural Programming</p>
+        </header>
+        
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="c-programming.html">C Programming</a>
+            <a href="java-programming.html">Java Programming</a>
+            <a href="electricity-magnetism.html">Electricity & Magnetism</a>
+        </nav>
+        
+        <div class="content">
+            <h1>Introduction to C Programming</h1>
+            <p>C is a powerful procedural programming language that forms the foundation of modern computing. This guide covers all fundamental concepts you need to master C programming.</p>
+            
+            <h2>1. Basic Structure of a C Program</h2>
+            <p>Every C program follows a standard structure:</p>
+            <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Hello, World!\n");
+    return 0;
+}</code></pre>
+            
+            <div class="note">
+                <strong>Note:</strong> The <code>main()</code> function is the entry point of every C program. Execution always begins here.
+            </div>
+            
+            <h2>2. Variables and Data Types</h2>
+            <p>C is a statically-typed language. You must declare variables before using them.</p>
+            
+            <h3>Primitive Data Types</h3>
+            <table>
+                <tr>
+                    <th>Type</th>
+                    <th>Size</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td><code>int</code></td>
+                    <td>4 bytes</td>
+                    <td>Integer numbers</td>
+                    <td><code>int age = 25;</code></td>
+                </tr>
+                <tr>
+                    <td><code>float</code></td>
+                    <td>4 bytes</td>
+                    <td>Single precision decimal</td>
+                    <td><code>float pi = 3.14;</code></td>
+                </tr>
+                <tr>
+                    <td><code>double</code></td>
+                    <td>8 bytes</td>
+                    <td>Double precision decimal</td>
+                    <td><code>double price = 99.99;</code></td>
+                </tr>
+                <tr>
+                    <td><code>char</code></td>
+                    <td>1 byte</td>
+                    <td>Single character</td>
+                    <td><code>char grade = 'A';</code></td>
+                </tr>
+            </table>
+            
+            <h3>Variable Declaration and Initialization</h3>
+            <pre><code>int x;          // Declaration
+x = 10;         // Assignment
+int y = 20;     // Declaration + Initialization
+
+const int MAX = 100;  // Constant (cannot be changed)</code></pre>
+            
+            <h2>3. Operators</h2>
+            
+            <h3>Arithmetic Operators</h3>
+            <pre><code>int a = 10, b = 3;
+int sum = a + b;        // Addition: 13
+int diff = a - b;       // Subtraction: 7
+int product = a * b;    // Multiplication: 30
+int quotient = a / b;   // Division: 3
+int remainder = a % b;  // Modulus: 1</code></pre>
+            
+            <h3>Comparison Operators</h3>
+            <pre><code>a == b    // Equal to
+a != b    // Not equal to
+a > b     // Greater than
+a < b     // Less than
+a >= b    // Greater than or equal to
+a <= b    // Less than or equal to</code></pre>
+            
+            <h3>Logical Operators</h3>
+            <pre><code>&&    // AND
+||    // OR
+!     // NOT</code></pre>
+            
+            <h2>4. Control Structures</h2>
+            
+            <h3>If-Else Statements</h3>
+            <pre><code>int score = 85;
+
+if (score >= 90) {
+    printf("Grade: A\n");
+} else if (score >= 80) {
+    printf("Grade: B\n");
+} else if (score >= 70) {
+    printf("Grade: C\n");
+} else {
+    printf("Grade: F\n");
+}</code></pre>
+            
+            <h3>Switch Statement</h3>
+            <pre><code>char grade = 'B';
+
+switch(grade) {
+    case 'A':
+        printf("Excellent!\n");
+        break;
+    case 'B':
+        printf("Good job!\n");
+        break;
+    case 'C':
+        printf("Average\n");
+        break;
+    default:
+        printf("Invalid grade\n");
+}</code></pre>
+            
+            <div class="important">
+                <strong>Important:</strong> Always use <code>break</code> in switch cases to prevent fall-through behavior!
+            </div>
+            
+            <h2>5. Loops</h2>
+            
+            <h3>For Loop</h3>
+            <pre><code>// Print numbers 1 to 5
+for (int i = 1; i <= 5; i++) {
+    printf("%d ", i);
+}
+// Output: 1 2 3 4 5</code></pre>
+            
+            <h3>While Loop</h3>
+            <pre><code>int count = 1;
+while (count <= 5) {
+    printf("%d ", count);
+    count++;
+}</code></pre>
+            
+            <h3>Do-While Loop</h3>
+            <pre><code>int num = 1;
+do {
+    printf("%d ", num);
+    num++;
+} while (num <= 5);</code></pre>
+            
+            <div class="tip">
+                <strong>Tip:</strong> Use <code>do-while</code> when you need to execute the loop body at least once, regardless of the condition.
+            </div>
+            
+            <h2>6. Functions</h2>
+            <p>Functions allow you to organize code into reusable blocks.</p>
+            
+            <h3>Function Declaration and Definition</h3>
+            <pre><code>// Function declaration (prototype)
+int add(int a, int b);
+
+// Function definition
+int add(int a, int b) {
+    return a + b;
+}
+
+// Function call
+int main() {
+    int result = add(5, 3);
+    printf("Sum: %d\n", result);
+    return 0;
+}</code></pre>
+            
+            <h3>Void Functions</h3>
+            <pre><code>void greet(char name[]) {
+    printf("Hello, %s!\n", name);
+}
+
+int main() {
+    greet("Alice");
+    return 0;
+}</code></pre>
+            
+            <h3>Recursion</h3>
+            <pre><code>// Factorial using recursion
+int factorial(int n) {
+    if (n == 0 || n == 1) {
+        return 1;
+    }
+    return n * factorial(n - 1);
+}
+
+int main() {
+    printf("5! = %d\n", factorial(5));  // Output: 120
+    return 0;
+}</code></pre>
+            
+            <h2>7. Arrays</h2>
+            
+            <h3>One-Dimensional Arrays</h3>
+            <pre><code>// Declaration and initialization
+int numbers[5] = {10, 20, 30, 40, 50};
+
+// Accessing elements
+printf("First element: %d\n", numbers[0]);
+
+// Iterating through array
+for (int i = 0; i < 5; i++) {
+    printf("%d ", numbers[i]);
+}</code></pre>
+            
+            <h3>Two-Dimensional Arrays</h3>
+            <pre><code>int matrix[3][3] = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+};
+
+// Accessing elements
+printf("Element at [1][2]: %d\n", matrix[1][2]);  // Output: 6</code></pre>
+            
+            <h2>8. Pointers</h2>
+            <p>Pointers are one of the most powerful features in C. They store memory addresses.</p>
+            
+            <h3>Basic Pointer Usage</h3>
+            <pre><code>int x = 10;
+int *ptr = &x;  // ptr stores the address of x
+
+printf("Value of x: %d\n", x);
+printf("Address of x: %p\n", &x);
+printf("Value stored in ptr: %p\n", ptr);
+printf("Value pointed to by ptr: %d\n", *ptr);</code></pre>
+            
+            <h3>Pointer Arithmetic</h3>
+            <pre><code>int arr[5] = {10, 20, 30, 40, 50};
+int *p = arr;
+
+printf("%d\n", *p);      // 10
+printf("%d\n", *(p+1));  // 20
+printf("%d\n", *(p+2));  // 30</code></pre>
+            
+            <h3>Pointers and Functions</h3>
+            <pre><code>// Pass by reference using pointers
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int main() {
+    int x = 5, y = 10;
+    swap(&x, &y);
+    printf("x = %d, y = %d\n", x, y);  // x = 10, y = 5
+    return 0;
+}</code></pre>
+            
+            <div class="important">
+                <strong>Important:</strong> Always initialize pointers before using them. Uninitialized pointers can cause segmentation faults!
+            </div>
+            
+            <h2>9. Strings</h2>
+            <p>In C, strings are arrays of characters terminated by a null character <code>'\0'</code>.</p>
+            
+            <pre><code>#include &lt;string.h&gt;
+
+char name[20] = "Alice";
+char greeting[50];
+
+// String functions
+strcpy(greeting, "Hello");       // Copy string
+strcat(greeting, " World");      // Concatenate
+int len = strlen(greeting);      // Get length
+int cmp = strcmp("abc", "abc");  // Compare strings (0 if equal)</code></pre>
+            
+            <h2>10. Structures</h2>
+            <p>Structures allow you to group related data together.</p>
+            
+            <pre><code>struct Student {
+    char name[50];
+    int age;
+    float gpa;
+};
+
+int main() {
+    struct Student s1;
+    
+    strcpy(s1.name, "John");
+    s1.age = 20;
+    s1.gpa = 3.8;
+    
+    printf("Name: %s\n", s1.name);
+    printf("Age: %d\n", s1.age);
+    printf("GPA: %.2f\n", s1.gpa);
+    
+    return 0;
+}</code></pre>
+            
+            <h2>11. Dynamic Memory Allocation</h2>
+            
+            <pre><code>#include &lt;stdlib.h&gt;
+
+int *arr;
+int n = 5;
+
+// Allocate memory
+arr = (int*)malloc(n * sizeof(int));
+
+if (arr == NULL) {
+    printf("Memory allocation failed!\n");
+    return 1;
+}
+
+// Use the array
+for (int i = 0; i < n; i++) {
+    arr[i] = i * 10;
+}
+
+// Free memory when done
+free(arr);</code></pre>
+            
+            <div class="important">
+                <strong>Important:</strong> Always free dynamically allocated memory to prevent memory leaks!
+            </div>
+            
+            <h2>12. File I/O</h2>
+            
+            <h3>Writing to a File</h3>
+            <pre><code>FILE *file = fopen("output.txt", "w");
+
+if (file == NULL) {
+    printf("Error opening file!\n");
+    return 1;
+}
+
+fprintf(file, "Hello, File!\n");
+fprintf(file, "Line 2\n");
+
+fclose(file);</code></pre>
+            
+            <h3>Reading from a File</h3>
+            <pre><code>FILE *file = fopen("input.txt", "r");
+char buffer[100];
+
+if (file == NULL) {
+    printf("Error opening file!\n");
+    return 1;
+}
+
+while (fgets(buffer, 100, file) != NULL) {
+    printf("%s", buffer);
+}
+
+fclose(file);</code></pre>
+            
+            <h2>Key Takeaways</h2>
+            <ul>
+                <li>C is a procedural language focused on functions and structured programming</li>
+                <li>Memory management is manual - you control allocation and deallocation</li>
+                <li>Pointers provide powerful low-level memory access</li>
+                <li>Always check return values and handle errors</li>
+                <li>Use meaningful variable names and comments</li>
+                <li>Practice defensive programming - validate inputs and check bounds</li>
+            </ul>
+            
+            <div class="navigation">
+                <a href="index.html" class="nav-btn">← Back to Home</a>
+                <a href="java-programming.html" class="nav-btn">Next: Java Programming →</a>
+            </div>
+        </div>
+        
+        <footer>
+            <p>&copy; 2025 Programming & Physics Tutor. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

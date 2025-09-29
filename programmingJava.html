@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Programming Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+        }
+        header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5em;
+        }
+        nav {
+            background: #f8f9fa;
+            padding: 15px 40px;
+            border-bottom: 2px solid #e9ecef;
+        }
+        nav a {
+            color: #f5576c;
+            text-decoration: none;
+            margin-right: 25px;
+            font-weight: 600;
+        }
+        nav a:hover {
+            color: #f093fb;
+        }
+        .content {
+            padding: 40px;
+        }
+        h2 {
+            color: #f5576c;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e9ecef;
+        }
+        h3 {
+            color: #f093fb;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        code {
+            background: #f8f9fa;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #e83e8c;
+        }
+        pre {
+            background: #2d3748;
+            color: #f7fafc;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        pre code {
+            background: none;
+            color: #f7fafc;
+            padding: 0;
+        }
+        .note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .important {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .tip {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .oop-principle {
+            background: #e7f3ff;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #e9ecef;
+        }
+        .nav-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+        .nav-btn:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background: #f5576c;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>☕ Java Programming Guide</h1>
+            <p>Master Object-Oriented Programming</p>
+        </header>
+        
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="c-programming.html">C Programming</a>
+            <a href="java-programming.html">Java Programming</a>
+            <a href="electricity-magnetism.html">Electricity & Magnetism</a>
+        </nav>
+        
+        <div class="content">
+            <h1>Introduction to Java Programming</h1>
+            <p>Java is a powerful, object-oriented programming language that emphasizes code reusability, security, and platform independence. This guide covers all fundamental OOP concepts and Java essentials.</p>
+            
+            <h2>1. Basic Structure of a Java Program</h2>
+            <pre><code>public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}</code></pre>
+            
+            <div class="note">
+                <strong>Note:</strong> The filename must match the public class name. This file would be saved as <code>HelloWorld.java</code>.
+            </div>
+            
+            <h2>2. Object-Oriented Programming Principles</h2>
+            <p>Java is built on four fundamental OOP principles:</p>
+            
+            <div class="oop-principle">
+                <h3>🔹 Encapsulation</h3>
+                <p>Bundling data (fields) and methods that operate on that data within a single unit (class), and restricting direct access to some components.</p>
+            </div>
+            
+            <div class="oop-principle">
+                <h3>🔹 Inheritance</h3>
+                <p>Creating new classes based on existing classes, inheriting their properties and methods while adding new functionality.</p>
+            </div>
+            
+            <div class="oop-principle">
+                <h3>🔹 Polymorphism</h3>
+                <p>The ability of objects to take on multiple forms. Same method name can behave differently based on the object calling it.</p>
+            </div>
+            
+            <div class="oop-principle">
+                <h3>🔹 Abstraction</h3>
+                <p>Hiding complex implementation details and showing only essential features to the user.</p>
+            </div>
+            
+            <h2>3. Variables and Data Types</h2>
+            
+            <h3>Primitive Data Types</h3>
+            <table>
+                <tr>
+                    <th>Type</th>
+                    <th>Size</th>
+                    <th>Default Value</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td><code>byte</code></td>
+                    <td>1 byte</td>
+                    <td>0</td>
+                    <td><code>byte age = 25;</code></td>
+                </tr>
+                <tr>
+                    <td><code>short</code></td>
+                    <td>2 bytes</td>
+                    <td>0</td>
+                    <td><code>short year = 2025;</code></td>
+                </tr>
+                <tr>
+                    <td><code>int</code></td>
+                    <td>4 bytes</td>
+                    <td>0</td>
+                    <td><code>int count = 100;</code></td>
+                </tr>
+                <tr>
+                    <td><code>long</code></td>
+                    <td>8 bytes</td>
+                    <td>0L</td>
+                    <td><code>long distance = 1000000L;</code></td>
+                </tr>
+                <tr>
+                    <td><code>float</code></td>
+                    <td>4 bytes</td>
+                    <td>0.0f</td>
+                    <td><code>float pi = 3.14f;</code></td>
+                </tr>
+                <tr>
+                    <td><code>double</code></td>
+                    <td>8 bytes</td>
+                    <td>0.0d</td>
+                    <td><code>double price = 99.99;</code></td>
+                </tr>
+                <tr>
+                    <td><code>char</code></td>
+                    <td>2 bytes</td>
+                    <td>'\u0000'</td>
+                    <td><code>char grade = 'A';</code></td>
+                </tr>
+                <tr>
+                    <td><code>boolean</code></td>
+                    <td>1 bit</td>
+                    <td>false</td>
+                    <td><code>boolean isValid = true;</code></td>
+                </tr>
+            </table>
+            
+            <h3>Reference Types</h3>
+            <pre><code>String name = "Alice";
+int[] numbers = {1, 2, 3, 4, 5};
+ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;();</code></pre>
+            
+            <h2>4. Classes and Objects</h2>
+            <p>A class is a blueprint for creating objects. An object is an instance of a class.</p>
+            
+            <h3>Defining a Class</h3>
+            <pre><code>public class Person {
+    // Instance variables (fields)
+    private String name;
+    private int age;
+    
+    // Constructor
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    // Getter methods
+    public String getName() {
+        return name;
+    }
+    
+    public int getAge() {
+        return age;
+    }
+    
+    // Setter methods
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    public void setAge(int age) {
+        if (age > 0) {
+            this.age = age;
+        }
+    }
+    
+    // Method
+    public void introduce() {
+        System.out.println("Hi, I'm " + name + " and I'm " + age + " years old.");
+    }
+}</code></pre>
+            
+            <h3>Creating Objects</h3>
+            <pre><code>public class Main {
+    public static void main(String[] args) {
+        Person person1 = new Person("Alice", 25);
+        person1.introduce();  // Output: Hi, I'm Alice and I'm 25 years old.
+        
+        person1.setAge(26);
+        System.out.println(person1.getAge());  // Output: 26
+    }
+}</code></pre>
+            
+            <div class="tip">
+                <strong>Tip:</strong> Use private fields with public getter/setter methods (encapsulation) to control access to class data.
+            </div>
+            
+            <h2>5. Constructors</h2>
+            <p>Constructors initialize objects when they are created.</p>
+            
+            <h3>Types of Constructors</h3>
+            <pre><code>public class Student {
+    private String name;
+    private int id;
+    
+    // Default constructor
+    public Student() {
+        this.name = "Unknown";
+        this.id = 0;
+    }
+    
+    // Parameterized constructor
+    public Student(String name, int id) {
+        this.name = name;
+        this.id = id;
+    }
+    
+    // Constructor overloading
+    public Student(String name) {
+        this.name = name;
+        this.id = 0;
+    }
+}</code></pre>
+            
+            <h2>6. Inheritance</h2>
+            <p>Inheritance allows a class to inherit properties and methods from another class.</p>
+            
+            <pre><code>// Parent class (superclass)
+public class Animal {
+    protected String name;
+    
+    public Animal(String name) {
+        this.name = name;
+    }
+    
+    public void eat() {
+        System.out.println(name + " is eating.");
+    }
+    
+    public void sleep() {
+        System.out.println(name + " is sleeping.");
+    }
+}
+
+// Child class (subclass)
+public class Dog extends Animal {
+    private String breed;
+    
+    public Dog(String name, String breed) {
+        super(name);  // Call parent constructor
+        this.breed = breed;
+    }
+    
+    public void bark() {
+        System.out.println(name + " is barking!");
+    }
+    
+    // Method overriding
+    @Override
+    public void eat() {
+        System.out.println(name + " the dog is eating dog food.");
+    }
+}
+
+// Usage
+Dog myDog = new Dog("Buddy", "Golden Retriever");
+myDog.eat();    // Output: Buddy the dog is eating dog food.
+myDog.bark();   // Output: Buddy is barking!
+myDog.sleep();  // Output: Buddy is sleeping.</code></pre>
+            
+            <div class="important">
+                <strong>Important:</strong> Java supports single inheritance only (a class can extend only one class), but can implement multiple interfaces.
+            </div>
+            
+            <h2>7. Polymorphism</h2>
+            
+            <h3>Method Overloading (Compile-time Polymorphism)</h3>
+            <pre><code>public class Calculator {
+    public int add(int a, int b) {
+        return a + b;
+    }
+    
+    public double add(double a, double b) {
+        return a + b;
+    }
+    
+    public int add(int a, int b, int c) {
+        return a + b + c;
+    }
+}</code></pre>
+            
+            <h3>Method Overriding (Runtime Polymorphism)</h3>
+            <pre><code>public class Shape {
+    public void draw() {
+        System.out.println("Drawing a shape");
+    }
+}
+
+public class Circle extends Shape {
+    @Override
+    public void draw() {
+        System.out.println("Drawing a circle");
+    }
+}
+
+public class Rectangle extends Shape {
+    @Override
+    public void draw() {
+        System.out.println("Drawing a rectangle");
+    }
+}
+
+// Polymorphic behavior
+Shape shape1 = new Circle();
+Shape shape2 = new Rectangle();
+
+shape1.draw();  // Output: Drawing a circle
+shape2.draw();  // Output: Drawing a rectangle</code></pre>
+            
+            <h2>8. Abstract Classes</h2>
+            <p>Abstract classes cannot be instantiated and may contain abstract methods (methods without implementation).</p>
+            
+            <pre><code>public abstract class Vehicle {
+    protected String brand;
+    
+    public Vehicle(String brand) {
+        this.brand = brand;
+    }
+    
+    // Abstract method (no implementation)
+    public abstract void start();
+    
+    // Concrete method
+    public void stop() {
+        System.out.println(brand + " is stopping.");
+    }
+}
+
+public class Car extends Vehicle {
+    public Car(String brand) {
+        super(brand);
+    }
+    
+    @Override
+    public void start() {
+        System.out.println(brand + " car is starting with ignition.");
+    }
+}
+
+// Usage
+Vehicle myCar = new Car("Toyota");
+myCar.start();  // Output: Toyota car is starting with ignition.
+myCar.stop();   // Output: Toyota is stopping.</code></pre>
+            
+            <h2>9. Interfaces</h2>
+            <p>Interfaces define a contract that classes must follow. All methods are implicitly abstract and public.</p>
+            
+            <pre><code>public interface Drawable {
+    void draw();  // implicitly public and abstract
+    void resize(int width, int height);
+}
+
+public interface Colorable {
+    void setColor(String color);
+}
+
+// A class can implement multiple interfaces
+public class Circle implements Drawable, Colorable {
+    private int radius;
+    private String color;
+    
+    @Override
+    public void draw() {
+        System.out.println("Drawing a circle");
+    }
+    
+    @Override
+    public void resize(int width, int height) {
+        this.radius = width / 2;
+    }
+    
+    @Override
+    public void setColor(String color) {
+        this.color = color;
+    }
+}</code></pre>
+            
+            <div class="note">
+                <strong>Note:</strong> Since Java 8, interfaces can have default methods and static methods with implementation.
+            </div>
+            
+            <h2>10. Exception Handling</h2>
+            <p>Exception handling allows you to manage runtime errors gracefully.</p>
+            
+            <h3>Try-Catch Block</h3>
+            <pre><code>public class ExceptionExample {
+    public static void main(String[] args) {
+        try {
+            int result = 10 / 0;  // ArithmeticException
+        } catch (ArithmeticException e) {
+            System.out.println("Error: Cannot divide by zero");
+            System.out.println("Message: " + e.getMessage());
+        } finally {
+            System.out.println("This always executes");
+        }
+    }
+}</code></pre>
+            
+            <h3>Multiple Catch Blocks</h3>
+            <pre><code>try {
+    int[] arr = new int[5];
+    arr[10] = 50;  // ArrayIndexOutOfBoundsException
+} catch (ArrayIndexOutOfBoundsException e) {
+    System.out.println("Array index out of bounds");
+} catch (Exception e) {
+    System.out.println("General exception occurred");
+}</code></pre>
+            
+            <h3>Throwing Exceptions</h3>
+            <pre><code>public void checkAge(int age) throws IllegalArgumentException {
+    if (age < 18) {
+        throw new IllegalArgumentException("Age must be 18 or older");
+    }
+    System.out.println("Age is valid");
+}</code></pre>
+            
+            <h2>11. Collections Framework</h2>
+            <p>Java provides powerful data structures through the Collections Framework.</p>
+            
+            <h3>ArrayList</h3>
+            <pre><code>import java.util.ArrayList;
+
+ArrayList&lt;String&gt; fruits = new ArrayList&lt;&gt;();
+
+// Adding elements
+fruits.add("Apple");
+fruits.add("Banana");
+fruits.add("Cherry");
+
+// Accessing elements
+System.out.println(fruits.get(0));  // Apple
+
+// Iterating
+for (String fruit : fruits) {
+    System.out.println(fruit);
+}
+
+// Removing elements
+fruits.remove("Banana");
+fruits.remove(0);  // Remove by index</code></pre>
+            
+            <h3>HashMap</h3>
+            <pre><code>import java.util.HashMap;
+
+HashMap&lt;String, Integer&gt; ages = new HashMap&lt;&gt;();
+
+// Adding key-value pairs
+ages.put("Alice", 25);
+ages.put("Bob", 30);
+ages.put("Charlie", 35);
+
+// Accessing values
+System.out.println(ages.get("Alice"));  // 25
+
+// Iterating
+for (String name : ages.keySet()) {
+    System.out.println(name + ": " + ages.get(name));
+}
+
+// Check if key exists
+if (ages.containsKey("Bob")) {
+    System.out.println("Bob's age: " + ages.get("Bob"));
+}</code></pre>
+            
+            <h3>HashSet</h3>
+            <pre><code>import java.util.HashSet;
+
+HashSet&lt;String&gt; uniqueNames = new HashSet&lt;&gt;();
+
+uniqueNames.add("Alice");
+uniqueNames.add("Bob");
+uniqueNames.add("Alice");  // Duplicate, won't be added
+
+System.out.println(uniqueNames.size());  // 2 (duplicates removed)</code></pre>
+            
+            <h2>12. Generics</h2>
+            <p>Generics enable types (classes and interfaces) to be parameters when defining classes, interfaces, and methods.</p>
+            
+            <pre><code>public class Box&lt;T&gt; {
+    private T item;
+    
+    public void setItem(T item) {
+        this.item = item;
+    }
+    
+    public T getItem() {
+        return item;
+    }
+}
+
+// Usage
+Box&lt;String&gt; stringBox = new Box&lt;&gt;();
+stringBox.setItem("Hello");
+String value = stringBox.getItem();
+
+Box&lt;Integer&gt; intBox = new Box&lt;&gt;();
+intBox.setItem(123);
+int number = intBox.getItem();</code></pre>
+            
+            <h2>13. File I/O</h2>
+            
+            <h3>Writing to a File</h3>
+            <pre><code>import java.io.FileWriter;
+import java.io.IOException;
+
+try {
+    FileWriter writer = new FileWriter("output.txt");
+    writer.write("Hello, World!\n");
+    writer.write("This is Java file I/O.\n");
+    writer.close();
+    System.out.println("Successfully wrote to file");
+} catch (IOException e) {
+    System.out.println("An error occurred");
+    e.printStackTrace();
+}</code></pre>
+            
+            <h3>Reading from a File</h3>
+            <pre><code>import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+try {
+    File file = new File("input.txt");
+    Scanner reader = new Scanner(file);
+    
+    while (reader.hasNextLine()) {
+        String line = reader.nextLine();
+        System.out.println(line);
+    }
+    reader.close();
+} catch (FileNotFoundException e) {
+    System.out.println("File not found");
+    e.printStackTrace();
+}</code></pre>
+            
+            <h2>14. Static vs Instance Members</h2>
+            
+            <pre><code>public class Counter {
+    // Static variable (shared by all instances)
+    private static int totalCount = 0;
+    
+    // Instance variable (unique to each instance)
+    private int instanceCount = 0;
+    
+    public Counter() {
+        totalCount++;
+        instanceCount++;
+    }
+    
+    // Static method (can be called without creating an object)
+    public static int getTotalCount() {
+        return totalCount;
+    }
+    
+    // Instance method
+    public int getInstanceCount() {
+        return instanceCount;
+    }
+}
+
+// Usage
+Counter c1 = new Counter();
+Counter c2 = new Counter();
+
+System.out.println(Counter.getTotalCount());  // 2 (static)
+System.out.println(c1.getInstanceCount());    // 1 (instance)</code></pre>
+            
+            <h2>Key Takeaways</h2>
+            <ul>
+                <li><strong>Everything is an object</strong> in Java (except primitives)</li>
+                <li><strong>Encapsulation</strong> protects data and provides controlled access</li>
+                <li><strong>Inheritance</strong> promotes code reuse and establishes relationships</li>
+                <li><strong>Polymorphism</strong> allows flexible and extensible code</li>
+                <li><strong>Abstraction</strong> hides complexity and shows only essentials</li>
+                <li><strong>Interfaces</strong> define contracts for implementation</li>
+                <li><strong>Exception handling</strong> makes programs robust and error-tolerant</li>
+                <li><strong>Collections Framework</strong> provides powerful data structures</li>
+                <li>Java is platform-independent (Write Once, Run Anywhere)</li>
+            </ul>
+            
+            <div class="navigation">
+                <a href="c-programming.html" class="nav-btn">← Previous: C Programming</a>
+                <a href="electricity-magnetism.html" class="nav-btn">Next: Electricity & Magnetism →</a>
+            </div>
+        </div>
+        
+        <footer>
+            <p>&copy; 2025 Programming & Physics Tutor. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
