@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming & Physics Tutor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        nav {
+            background: #f8f9fa;
+            padding: 15px 40px;
+            border-bottom: 2px solid #e9ecef;
+        }
+        nav a {
+            color: #667eea;
+            text-decoration: none;
+            margin-right: 25px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #764ba2;
+        }
+        .content {
+            padding: 40px;
+        }
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .course-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid #e9ecef;
+        }
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .course-card h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+        .course-card p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .course-card ul {
+            text-align: left;
+            margin: 20px 0;
+            color: #555;
+        }
+        .course-card li {
+            margin: 8px 0;
+        }
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎓 Programming & Physics Tutor</h1>
+            <p>Master the fundamentals with comprehensive guides</p>
+        </header>
+        
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="c-programming.html">C Programming</a>
+            <a href="java-programming.html">Java Programming</a>
+            <a href="electricity-magnetism.html">Electricity & Magnetism</a>
+        </nav>
+        
+        <div class="content">
+            <h1>Welcome to Your Learning Journey</h1>
+            <p>This comprehensive tutoring resource covers essential topics in computer science and physics. Choose a course below to begin your learning adventure.</p>
+            
+            <div class="course-grid">
+                <div class="course-card">
+                    <h2>C Programming</h2>
+                    <p>Master procedural programming with C</p>
+                    <ul>
+                        <li>Variables & Data Types</li>
+                        <li>Control Structures</li>
+                        <li>Functions & Recursion</li>
+                        <li>Pointers & Memory</li>
+                        <li>File I/O</li>
+                    </ul>
+                    <a href="c-programming.html" class="btn">Start Learning C</a>
+                </div>
+                
+                <div class="course-card">
+                    <h2>Java Programming</h2>
+                    <p>Learn object-oriented programming with Java</p>
+                    <ul>
+                        <li>OOP Principles</li>
+                        <li>Classes & Objects</li>
+                        <li>Inheritance & Polymorphism</li>
+                        <li>Exception Handling</li>
+                        <li>Collections Framework</li>
+                    </ul>
+                    <a href="java-programming.html" class="btn">Start Learning Java</a>
+                </div>
+                
+                <div class="course-card">
+                    <h2>Electricity & Magnetism</h2>
+                    <p>Explore the fundamentals of E&M physics</p>
+                    <ul>
+                        <li>Electric Fields & Forces</li>
+                        <li>Electric Potential</li>
+                        <li>Circuits & Ohm's Law</li>
+                        <li>Magnetic Fields</li>
+                        <li>Electromagnetic Induction</li>
+                    </ul>
+                    <a href="electricity-magnetism.html" class="btn">Start Learning E&M</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
